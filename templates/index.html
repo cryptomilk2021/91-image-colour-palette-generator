@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image processing</title>
+</head>
+<body>
+
+<p>uploaded image {{ image }}</p>
+
+      <form action = "http://localhost:5000/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit" value = "upload image" />
+      </form>
+<table>
+    <tr><td>
+<p align="center">
+
+<img src="static\{{ image }}" alt="your pic"  width="500" height="600"/></p></td><td>
+
+
+        <p>colour breakdown</p>
+        <table>
+            <tr><td align="center">%</td><td align="center">#</td><td></td></tr>
+    {% for i in colours_used %}
+<tr><td> {{ i[0] }} </td><td>#{{ i[1] }}</td><td></td></tr>
+        {% endfor %}
+</table>
+
+    </td>
+
+
+</table>
+
+</body>
+</html>
